@@ -1,0 +1,93 @@
+<?php
+/**
+ * @package WordPress
+ */
+
+<% if node['wordpress']['wp_cache']==true -%>
+define('WP_CACHE', true);
+<% end -%>
+
+<% if node['wordpress']['wp_auto_repair']==true -%>
+define('WP_ALLOW_REPAIR', true);
+<% end -%>
+
+<% if node['wordpress']['wp_memory_limit']==true -%>
+define('WP_MEMORY_LIMIT', '256M');
+<% end -%>
+
+<% if node['wordpress']['disable_wp_cron']==true -%>
+define('DISABLE_WP_CRON', true);
+<% end -%>
+
+<% if node['wordpress']['disable_file_editing']==true -%>
+define('DISALLOW_FILE_EDIT', true);
+<% end -%>
+
+<% if node['wordpress']['force_ssl_login']==true -%>
+define('FORCE_SSL_LOGIN', true);
+define('FORCE_SSL_ADMIN', true);
+<% end -%>
+
+<% if node['wordpress']['setup_multisite']==true -%>
+define('WP_ALLOW_MULTISITE', true);
+<% end -%>
+
+<% if node['wordpress']['network_enabled']==true -%>
+define('SUNRISE', 'on');
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', '<%= @mutlsite_root_domain %>');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+<% end -%>
+
+<% if node['wordpress']['aws_keys']==true -%>
+define('AWS_ACCESS_KEY_ID', '<%= @aws_access_key %>');
+define('AWS_SECRET_ACCESS_KEY', '<%= @aws_secrets_key %>');
+<% end -%>
+
+<% if node['wordpress']['ms_lockdown']==true -%>
+define( 'MS_LOCKDOWN_LOGIN_DATA', '@mslock_down_key' );
+<% end -%>
+
+/**
+ * Database Information
+ */
+define('DB_NAME', '<%= @db_name %>');
+define('DB_USER', '<%= @db_user %>');
+define('DB_PASSWORD', '<%= @db_pass %>');
+define('DB_HOST', '<%= @db_host %>');
+$table_prefix  = '<%= @db_prefix %>';
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+
+/**
+ * Manual Debug Settings
+ */
+define('WP_DEBUG', false);
+//define('WP_DEBUG', true);
+//define('WP_DEBUG_LOG', true);
+//define('WP_DEBUG_DISPLAY', false);
+//@ini_set('display_errors',0);
+
+/**
+ * Authentication Keys
+ */
+<%= @keys %>
+
+/**
+ * Localized Wordpress
+ */
+define ('WPLANG', '<%= @wplang %>');
+
+/**
+ * Wordpress
+ */
+
+if ( !defined('ABSPATH') )
+    define('ABSPATH', dirname(__FILE__) . '/');
+
+if( file_exists(ABSPATH . 'wp-config-custom.php') )
+    require_once(ABSPATH . 'wp-config-custom.php');
+    require_once(ABSPATH . 'wp-settings.php');
