@@ -144,15 +144,15 @@ node[:deploy].each do |app_name, deploy|
         group httpuser
     end
 
-    htaccess_partials = []
-    htaccess_partials << {:template => 'htaccess-browsercache.erb', :cookbook => 'w3_total_cache', :variables => {:cache => deploy[:wordpress][:cache]}} if deploy[:wordpress][:cache][:enabled] && deploy[:wordpress][:cache][:browsercache][:enabled]
-    htaccess_partials << {:template => 'htaccess-cdn.erb', :cookbook => 'w3_total_cache', :variables => {:cache => deploy[:wordpress][:cache]}} if deploy[:wordpress][:cache][:enabled] && deploy[:wordpress][:cache][:cdn][:enabled]
-    template "#{deploy[:deploy_to]}/current/.htaccess" do
-    cookbook 'wordpress'
-    source 'htaccess.erb'
-    mode '0660'
-    owner 'root'
-    group httpuser
+    # Delete license.txt File
+    file "#{deploy[:deploy_to]}/current/license.txt" do
+        action :delete
+    end
+
+    # Delete readme.html File
+    file "#{deploy[:deploy_to]}/current/readme.html" do
+        action :delete
+    end
 
     # Loopback Cron: Ensures Scheduled Content Is Posted If Not Posted
     cron 'wordpress' do
