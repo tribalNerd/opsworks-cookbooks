@@ -128,12 +128,20 @@ node[:deploy].each do |app_name, deploy|
         owner 'root'
         group httpuser
         variables(
-            :database   => db_name,
-            :user       => db_user,
-            :password   => db_password,
-            :host       => db_host,
-            :keys       => (keys rescue nil)
+            :db_name   => db_name,
+            :db_user   => db_user,
+            :db_pass   => db_pass,
+            :db_host   => db_host,
+            :keys      => (keys rescue nil)
         )
+    end
+
+    # Setup .htaccess File
+    template "#{deploy[:deploy_to]}/current/.htaccess" do
+        source "htaccess.erb"
+        mode 0660
+        owner 'root'
+        group httpuser
     end
 
     htaccess_partials = []
