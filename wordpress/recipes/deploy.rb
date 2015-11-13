@@ -8,14 +8,14 @@ require 'uri'
 require 'net/http'
 require 'net/https'
 
-# Check If PHP Available Before Continuing
-if deploy[:application_type] != 'php'
-    Chef::Log.info("PHP Not Found: Skipping wordpress::deploy")
-    next
-end
-
 # Deploy Wordpress
 node[:deploy].each do |app_name, deploy|
+
+    # Check If PHP Available Before Continuing
+    if deploy[:application_type] != 'php'
+        Chef::Log.info("PHP Not Found: Skipping wordpress::deploy")
+        next
+    end
 
     # Where To Store Download
 #    wp_tarball = "/usr/src/wordpress.tar.gz"

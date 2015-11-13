@@ -5,4 +5,4 @@ maintainer       "AWS OpsWorks"
 license          "Apache 2.0"
 version          "1.0.0"
 
-recipe "virtualhost::default", "Setup Virtual Hosts File For Apache 2"
+#recipe "virtualhost::default", "Setup Virtual Hosts File For Apache 2"
