@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: virtualhost
-# Recipe:: default
+# Recipe:: virtualhost::default
 # About:: Defined Settings
 #
 

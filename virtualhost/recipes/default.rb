@@ -1,15 +1,15 @@
 #
 # Cookbook Name:: virtualhost
-# Recipe:: default
-# About:: Add Custom Apache2 VirtualHost
+# Recipe:: virtualhost::default
+# About:: Create VirtualHost Config File For Websites
 #
 
 # Setup VirtualHost File
 template "/etc/httpd/conf.d/websites.conf" do
     source "virtualhost.conf.erb"
     mode 0644
-    owner deploy[:user]
-    group deploy[:group]
+    owner 'root'
+    group 'root'
 end
 
 # Restart Apache

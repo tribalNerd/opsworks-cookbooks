@@ -4,12 +4,6 @@
 # About:: Install & Start Memcached
 #
 
-# Check If PHP Available Before Continuing
-if deploy[:application_type] != 'php'
-    Chef::Log.info("PHP Not Found: Skipping memcached::default")
-    next
-end
-
 # Install Memcached
 execute "install memcached" do
     command "yum install memcached -y"
