@@ -6,12 +6,12 @@
 
 # Check If PHP Available Before Continuing
 if deploy[:application_type] != 'php'
-    Chef::Log.info("PHP Not Found: Skipping virtualhost::deploy")
+    Chef::Log.info("PHP Not Found: Skipping virtualhost::default")
     next
 end
 
 # Setup VirtualHost File
-template "#{node['virtualhost']['path']}/#{node['virtualhost']['file']}" do
+template "/etc/httpd/conf.d/websites.conf" do
     source "virtualhost.conf.erb"
     mode 0644
     owner 'root'
