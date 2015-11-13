@@ -5,16 +5,11 @@
 #
 
 # Create VirtualHost From: templates/default
-template "/etc/httpd/conf.d/websites.conf" do
-    source "virtualhost.conf.erb"
+template "/etc/httpd/conf.d/web_apps.conf" do
+    source "web_app.conf.erb"
     mode 0644
     owner 'root'
     group 'root'
-    variables(
-        :domain => node[:virutalhost][:websites][:domain] rescue nil,
-        :root   => node[:virutalhost][:websites][:root] rescue nil,
-        :admin  => node[:virutalhost][:websites][:admin] rescue nil,
-    )
 end
 
 # Restart Apache
