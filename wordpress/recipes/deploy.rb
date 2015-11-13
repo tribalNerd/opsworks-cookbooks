@@ -18,45 +18,45 @@ end
 node[:deploy].each do |app_name, deploy|
 
     # Where To Store Download
-    wp_tarball = "/usr/src/wordpress.tar.gz"
+#    wp_tarball = "/usr/src/wordpress.tar.gz"
 
     # Download Wordpress
-    remote_file 'fetch Wordpress tarball' do
-        action :create_if_missing
-        source node[:wordpress][:latest]
-        path wp_tarball
-        mode 0644
-    end
+#    remote_file 'fetch Wordpress tarball' do
+#        action :create_if_missing
+#        source node[:wordpress][:latest]
+#        path wp_tarball
+#        mode 0644
+#    end
 
     # Extract Wordpress
-    bash "extract wordpress to #{deploy[:deploy_to]}/current" do
-        code <<-EOH
-            tmpdir="$(mktemp -d)"
-            cd $tmpdir
-            tar xzf #{wp_tarball}
-            cp -R --no-clobber wordpress/* #{deploy[:deploy_to]}/current
-            rm -Rf $tmpdir
-        EOH
-    end
+#    bash "extract wordpress to #{deploy[:deploy_to]}/current" do
+#        code <<-EOH
+#            tmpdir="$(mktemp -d)"
+#            cd $tmpdir
+#            tar xzf #{wp_tarball}
+#            cp -R --no-clobber wordpress/* #{deploy[:deploy_to]}/current
+#            rm -Rf $tmpdir
+#        EOH
+#    end
 
     # Download & Extract Plugins
-    node['wordpress']['plugins'].each do |plugin|
+#    node['wordpress']['plugins'].each do |plugin|
 
-        plugin_name = plugin[:name]
+#        plugin_name = plugin[:name]
 
         # Download Plugin
-        remote_file "/usr/src/plugin_#{plugin_name}.zip" do
-            action :create_if_missing
-            source plugin[:latest]
-        end
+#        remote_file "/usr/src/plugin_#{plugin_name}.zip" do
+#            action :create_if_missing
+#            source plugin[:latest]
+#        end
 
         # Extract Plugin
-        execute "extract plugin #{plugin_name} to #{deploy[:deploy_to]}/current" do
-            command "unzip -o /usr/src/plugin_#{plugin_name}.zip"
-            cwd "#{deploy[:deploy_to]}/current/wp-content/plugins"
-        end
+#        execute "extract plugin #{plugin_name} to #{deploy[:deploy_to]}/current" do
+#            command "unzip -o /usr/src/plugin_#{plugin_name}.zip"
+#            cwd "#{deploy[:deploy_to]}/current/wp-content/plugins"
+#        end
 
-    end
+#    end
 
     # Apache File Ownership Variable
     if platform?("ubuntu")
@@ -177,5 +177,4 @@ node[:deploy].each do |app_name, deploy|
         weekday '*'
         command "wget -q -O - http://#{deploy[:domains].first}/wp-cron.php?doing_wp_cron >/dev/null 2>&1"
     end
-
 end
