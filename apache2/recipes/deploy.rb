@@ -6,7 +6,7 @@
 
 # Check If PHP Available Before Continuing
 if deploy[:application_type] != 'php'
-    Chef::Log.info("PHP Not Found: Skipping wordpress::deploy")
+    Chef::Log.info("PHP Not Found: Skipping apache2::deploy")
     next
 end
 
