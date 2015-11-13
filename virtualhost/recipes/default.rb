@@ -6,7 +6,7 @@
 
 # Create VirtualHost From: templates/default
 template "/etc/httpd/conf.d/web_apps.conf" do
-    source "web_app.conf.erb"
+    source "web_apps.conf.erb"
     mode 0644
     owner 'root'
     group 'root'
