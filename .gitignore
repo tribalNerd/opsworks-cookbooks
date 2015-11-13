@@ -1,3 +1,6 @@
+apache.json
+wordpress.json
+
 *~
 *.com
 *.class
@@ -45,5 +48,3 @@ license.txt
 phpunit.xml
 readme.html
 readme.txt
-
-wordpress.json

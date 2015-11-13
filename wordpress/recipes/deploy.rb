@@ -147,11 +147,27 @@ node[:deploy].each do |app_name, deploy|
     # Delete license.txt File
     file "#{deploy[:deploy_to]}/current/license.txt" do
         action :delete
+        backup false
+        only_if do
+            File.exists?("#{deploy[:deploy_to]}/current/license.txt")
+        end
     end
 
     # Delete readme.html File
     file "#{deploy[:deploy_to]}/current/readme.html" do
         action :delete
+        backup false
+        only_if do
+            File.exists?("#{deploy[:deploy_to]}/current/readme.html")
+        end
+    end
+
+    file "#{deploy[:deploy_to]}/current/index.html" do
+        action :delete
+        backup false
+        only_if do
+            File.exists?("#{deploy[:deploy_to]}/current/index.html")
+        end
     end
 
     # Loopback Cron: Ensures Scheduled Content Is Posted If Not Posted

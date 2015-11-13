@@ -1,0 +1,15 @@
+<% if @websites -%>
+    <% @websites.each do |websites| -%>
+<VirtualHost *:80>
+    ServerAdmin <%= @admin %>
+    DocumentRoot "<%= @root %>"
+    ServerName <%= @domain %>
+    <Directory <%= @root %>>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
+    <% end -%>
+<% end -%>

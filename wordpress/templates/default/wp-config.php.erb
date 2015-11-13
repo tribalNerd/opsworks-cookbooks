@@ -48,7 +48,7 @@ define('AWS_SECRET_ACCESS_KEY', '<%= @aws_secrets_key %>');
 <% end -%>
 
 <% if node['wordpress']['ms_lockdown']==true -%>
-define( 'MS_LOCKDOWN_LOGIN_DATA', '@mslock_down_key' );
+define( 'MS_LOCKDOWN_LOGIN_DATA', '<%= @mslock_down_key %>' );
 <% end -%>
 
 /**
