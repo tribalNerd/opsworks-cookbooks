@@ -1,12 +1,12 @@
 #
 # Cookbook Name:: memcached
-# Recipe:: deploy
+# Recipe:: default
 # About:: Install & Start Memcached
 #
 
 # Check If PHP Available Before Continuing
 if deploy[:application_type] != 'php'
-    Chef::Log.info("PHP Not Found: Skipping memcached::deploy")
+    Chef::Log.info("PHP Not Found: Skipping memcached::default")
     next
 end
 
