@@ -4,9 +4,9 @@ Setup Apache2, Modify Default Editor, Install Memcached & Wordpress
 
 ----
 
-[Apache2 Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/wordpress)
-[Editor Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/editor)
-[Memcached Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/memcached)
+[VirutalHost Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/virutalhost)
+[Set Editor Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/editor)
+[Memcached Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/yum-memcached)
 [Wordpress Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/wordpress)
 
 ----
