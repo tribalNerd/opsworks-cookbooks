@@ -12,9 +12,9 @@ node[:vhost].each do |domain, root, admin|
         group 'root'
         mode 0644
         variables(
-            :domain => domain,
-            :admin => admin,
-            :root => root
+            :domain => node[:vhost][:domain],
+            :admin => node[:vhost][:admin],
+            :root => node[:vhost][:root]
        )
     end
 end
