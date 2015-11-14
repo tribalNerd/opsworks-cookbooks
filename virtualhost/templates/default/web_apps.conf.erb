@@ -1,9 +1,8 @@
-<% @hosts.each do |node| %>
 <VirtualHost *:80>
-    ServerName <%= node['domain'] %>
-    ServerAdmin <%= node['admin'] %>
-    DocumentRoot <%= node['root'] %>
-    <Directory <%= node['root'] %>>
+    ServerName <%= @domain %>
+    ServerAdmin <%= @admin %>
+    DocumentRoot <%= @root %>
+    <Directory <%= @root %>>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order deny,allow
@@ -11,4 +10,3 @@
     </Directory>
     FileETag none
 </VirtualHost>
-<% end %>
