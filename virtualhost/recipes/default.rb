@@ -5,7 +5,7 @@
 #
 
 # Create VirtualHost From: templates/default
-hosts = search(:node, "*:*")
+hosts = search(:vhost, "*:*")
 #node[:vhost].each do |key,value|
     template "/etc/httpd/conf.d/web_apps.conf" do
         source "web_apps.conf.erb"
