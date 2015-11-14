@@ -1,10 +1,8 @@
-<% if @params[:web_apps][:website] && !@params[:web_apps][:website].empty? -%>
-    <% @params[:web_apps][:website].each do |website| -%>
 <VirtualHost *:80>
-    ServerName @params[:web_apps][:website][:domain] %>
-    ServerAdmin <%= @params[:web_apps][:website][:admin] %>
-    DocumentRoot <%= @params[:web_apps][:website][:root] %>
-    <Directory <%= @params[:web_apps][:website][:root] %>>
+    ServerName <%= @domain%>
+    ServerAdmin <%= @admin%>
+    DocumentRoot <%= @root%>
+    <Directory <%= @root%>>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order deny,allow
@@ -12,5 +10,3 @@
     </Directory>
     FileETag none
 </VirtualHost>
-    <% end -%>
-<% end -%>
