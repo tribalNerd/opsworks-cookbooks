@@ -5,19 +5,21 @@
 #
 
 # Create VirtualHost From: templates/default
-node[:vhost].each do |domain|
-    template "/etc/httpd/conf.d/#{node[:vhost][:domain]}.conf" do
-        source "#{node[:vhost][:tmpl]}"
+hosts = search(:node, "*:*")
+#node[:vhost].each do |key,value|
+    template "/etc/httpd/conf.d/web_apps.conf" do
+        source "web_apps.conf.erb"
         owner 'root'
         group 'root'
         mode 0644
         variables(
-            :domain => node[:vhost][:domain],
-            :admin => node[:vhost][:admin],
-            :root => node[:vhost][:root]
+            :hosts  => hosts;
+            :domain => node[:domain],
+            :admin  => node[:admin],
+            :root   => node[:root]
        )
     end
-end
+#end
 
 # Restart Apache
 #service "httpd" do

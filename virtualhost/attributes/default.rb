@@ -9,7 +9,7 @@
 # Use: #{node[:vhost][:conf]}
 #
 
-default[:vhost][:conf] = "/etc/httpd/conf.d"
+#default[:vhost][:conf] = "/etc/httpd/conf.d"
 
 
 #
@@ -17,4 +17,4 @@ default[:vhost][:conf] = "/etc/httpd/conf.d"
 # Use: #{node[:vhost][:tmpl]}
 #
 
-default[:vhost][:tmpl] = "web_apps.conf.erb"
+#default[:vhost][:tmpl] = "web_apps.conf.erb"
