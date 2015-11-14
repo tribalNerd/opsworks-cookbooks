@@ -10,10 +10,9 @@ template "/etc/httpd/conf.d/web_apps.conf" do
     owner 'root'
     group 'root'
     mode 0644
-    notifies :restart, "service[apache2]"
 end
 
 # Restart Apache
-#service "httpd" do
-#    action :restart
-#end
+service "httpd" do
+    action :restart
+end
