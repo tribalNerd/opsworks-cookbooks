@@ -12,9 +12,10 @@ node["vhost"]["domains"].each do |sitename, data|
         group 'root'
         mode 0644
         variables(
-            :domain => data["servername"],
-            :root   => data["serverroot"],
-            :admin  => data["serveradmin"]
+            :vhostport   => data["vhostport"],
+            :vhostdomain => data["vhostname"],
+            :vhostroot   => data["vhostroot"],
+            :vhostadmin  => data["vhostadmin"]
        )
     end
 end

@@ -1,0 +1,52 @@
+{
+    "vhost": [{
+        "domain" : "hive.madmadder.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@madmadder.com"
+    }],
+    "vhost": [{
+        "domain" : "gingerbot.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@technerdia.com"
+    }],
+    "vhost": [{
+        "domain" : "innersoultech.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@innersoultech.com"
+    }],
+    "vhost": [{
+        "domain" : "innersoultechnologies.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@innersoultech.com"
+    }],
+    "vhost": [{
+        "domain" : "madmadder.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@madmadder.com"
+    }],
+    "vhost": [{
+        "domain" : "demo.technerdia.com",
+        "root" : "/var/www/html/demo",
+        "admin" : "hostmaster@technerdia.com"
+    }],
+    "vhost": [{
+        "domain" : "msrtm.technerdia.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@technerdia.com"
+    }],
+    "vhost": [{
+        "domain" : "tucsongolfinfo.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@technerdia.com"
+    },
+    {
+        "domain" : "wearentchefs.com",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@technerdia.com"
+    }],
+    "vhost": [{
+        "domain" : "unicorn.buzz",
+        "root" : "/var/www/html",
+        "admin" : "hostmaster@technerdia.com"
+    }]
+}

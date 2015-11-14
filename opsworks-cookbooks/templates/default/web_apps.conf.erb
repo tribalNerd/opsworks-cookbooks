@@ -1,8 +1,8 @@
-<VirtualHost *:80>
-    ServerName <%= @domain %>
-    ServerAdmin <%= @admin %>
-    DocumentRoot <%= @root %>
-    <Directory <%= @root %>>
+<VirtualHost *:<%= @vhostport %>
+    ServerName <%= @vhostdomain %>
+    ServerAdmin <%= @vhostadmin %>
+    DocumentRoot <%= @vhostroot %>
+    <Directory <%= @vhostroot %>>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order deny,allow
