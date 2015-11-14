@@ -5,16 +5,16 @@
 #
 
 # Create VirtualHost From: templates/default
-node[:web_apps].each do |application, deploy|
-    template "/etc/httpd/conf.d/web_apps.conf" do
-        source "web_apps.conf.erb"
+node[:vhost].each do |domain, root, admin|
+    template "#{node[:vhost][:path]}/#{node[:vhost][:conf]}" do
+        source "#{node[:vhost][:tmpl]}"
         owner 'root'
         group 'root'
         mode 0644
         variables(
-            :domain => (deploy[:domain] rescue nil),
-            :admin => (deploy[:admin] rescue nil),
-            :root => (deploy[:root] rescue nil)
+            :domain => domain,
+            :admin => admin,
+            :root => root
        )
     end
 end
