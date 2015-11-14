@@ -10,6 +10,11 @@ template "/etc/httpd/conf.d/web_apps.conf" do
     mode 0644
     owner 'root'
     group 'root'
+    variables(
+        :domain => node[:web_apps][:website][:domain],
+        :admin => node[:web_apps][:website][:admin],
+        :root => node[:web_apps][:website][:root]
+    )
 end
 
 # Restart Apache

@@ -1,10 +1,10 @@
 <% if node[:web_apps][:website] -%>
     <% node[:web_apps][:website].each do |website| -%>
 <VirtualHost *:80>
-    ServerName <%= node[:web_apps][:website][:domain] %>
-    ServerAdmin <%= node[:web_apps][:website][:admin] %>
-    DocumentRoot <%= node[:web_apps][:website][:root] %>
-    <Directory <%= node[:web_apps][:website][:root] %>>
+    ServerName <%= @domain %>
+    ServerAdmin <%= @admin %>
+    DocumentRoot <%= @root %>
+    <Directory <%= @root %>>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
         Order deny,allow
