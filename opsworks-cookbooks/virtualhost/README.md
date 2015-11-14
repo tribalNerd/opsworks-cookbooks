@@ -1,13 +1,8 @@
-# AWS OpsWorks Cookbooks
+# AWS OpsWorks Cookbook : Apache2 Virtualhost
 
-Setup Apache2, Modify Default Editor, Install Memcached & Wordpress
+Setup Apache2 Virtualhost
 
 ----
-
-[VirutalHost Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/virutalhost)
-[Set Editor Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/editor)
-[Memcached Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/yum-memcached)
-[Wordpress Cookbook](https://github.com/tribalNerd/opsworks-cookbooks/tree/master/wordpress)
 
 ----
 

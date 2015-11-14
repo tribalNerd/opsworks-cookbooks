@@ -17,7 +17,7 @@
 # Use: #{node[:vhost][:tmpl]}
 #
 
-#default[:vhost][:tmpl] = "web_apps.conf.erb"
+#default[:vhost][:tmpl] = "vhost.conf.erb"
 
 
 #

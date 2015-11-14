@@ -7,7 +7,7 @@
 # Create VirtualHost From: templates/default
 node["vhost"]["domains"].each do |sitename, data|
     template "/etc/httpd/conf.d/#{sitename}.conf" do
-        source "web_apps.conf.erb"
+        source "vhost.conf.erb"
         owner 'root'
         group 'root'
         mode 0644
