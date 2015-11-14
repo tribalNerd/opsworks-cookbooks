@@ -7,17 +7,13 @@
 # Create VirtualHost From: templates/default
 template "/etc/httpd/conf.d/web_apps.conf" do
     source "web_apps.conf.erb"
-    mode 0644
     owner 'root'
     group 'root'
-    variables(
-        :domain => node[:web_apps][:website][:domain],
-        :admin => node[:web_apps][:website][:admin],
-        :root => node[:web_apps][:website][:root]
-    )
+    mode 0644
+    notifies :restart, "service[apache2]"
 end
 
 # Restart Apache
-service "httpd" do
-    action :restart
-end
+#service "httpd" do
+#    action :restart
+#end
