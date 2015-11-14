@@ -5,11 +5,7 @@
 #
 
 #
-# VirtualHost File To Create & Path To Apache
-#   #{node[:vhost][:conf]}
-#   #{node[:vhost][:path]}
-#   #{node[:vhost][:tmpl]}
+# Full Path to VirtualHost File To Create
+# Use: #{node[:vhost][:conf]}
 
-default[:vhost][:file] = "web_apps.conf"
-default[:vhost][:path] = "/etc/httpd/conf.d/"
-default[:vhost][:tmpl] = "web_apps.conf.erb"
+default[:vhost][:conf] = "/etc/httpd/conf.d/web_apps.conf"
