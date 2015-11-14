@@ -13,10 +13,7 @@ hosts = search(:node, "*:*")
         group 'root'
         mode 0644
         variables(
-            :hosts  => hosts;
-            :domain => node[:domain],
-            :admin  => node[:admin],
-            :root   => node[:root]
+            :hosts  => hosts
        )
     end
 #end
