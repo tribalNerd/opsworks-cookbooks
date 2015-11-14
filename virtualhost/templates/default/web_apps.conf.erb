@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+    ServerName <%= @domain %>
+    ServerAdmin <%= @admin %>
+    DocumentRoot <%= @root %>
+    <Directory <%= @root %>>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order deny,allow
+        Allow from all
+    </Directory>
+    FileETag none
+</VirtualHost>
