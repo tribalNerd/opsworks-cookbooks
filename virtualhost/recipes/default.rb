@@ -12,8 +12,8 @@ node[:vhost].each do |vhostname, data|
         group 'root'
         mode 0644
         variables(
-            :domain => data["domain"]
-            :root   => data["root"]
+            :domain => data["domain"],
+            :root   => data["root"],
             :admin  => data["admin"]
        )
     end
