@@ -5,7 +5,7 @@
 #
 
 # Create VirtualHost From: templates/default
-node[:vhost].each do |host|
+node[:vhost][:domain].each do |host|
     template "/etc/httpd/conf.d/#{node[:vhost][:domain]}.conf" do
         source "#{node[:vhost][:tmpl]}"
         owner 'root'
