@@ -1,5 +1,0 @@
-name             "Apache2 Custom Settings"
-description      "Apache2 Custom Settings"
-maintainer       "tribalNerd"
-license          "MIT"
-version          "1.0.0"
