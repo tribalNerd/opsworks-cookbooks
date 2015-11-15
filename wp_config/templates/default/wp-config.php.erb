@@ -1,55 +1,55 @@
 <?php
 /**
- * @package WordPress
+ * @package OpsWorks Cookbook: wp_config::default
  */
 
-<% if node['wordpress']['wp_cache']==true -%>
+<% if node[:wordpress][:wp_cache]==true %>
 define('WP_CACHE', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['wp_auto_repair']==true -%>
+<% if node[:wordpress][:wp_auto_repair]==true %>
 define('WP_ALLOW_REPAIR', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['wp_memory_limit']==true -%>
+<% if node[:wordpress][:wp_memory_limit]==true %>
 define('WP_MEMORY_LIMIT', '256M');
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['disable_wp_cron']==true -%>
+<% if node[:wordpress][:disable_wp_cron]==true %>
 define('DISABLE_WP_CRON', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['disable_file_edit']==true -%>
+<% if node[:wordpress][:disable_file_edit]==true %>
 define('DISALLOW_FILE_EDIT', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['force_ssl_login']==true -%>
+<% if node[:wordpress][:force_ssl_login]==true %>
 define('FORCE_SSL_LOGIN', true);
 define('FORCE_SSL_ADMIN', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['setup_multisite']==true -%>
+<% if node[:wordpress][:setup_multisite]==true %>
 define('WP_ALLOW_MULTISITE', true);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['network_enabled']==true -%>
+<% if node[:wordpress][:network_enabled]==true %>
 define('SUNRISE', 'on');
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', '<%= @mutlsite_root_domain %>');
+define('DOMAIN_CURRENT_SITE', '<%= @mutlsite_domain %>');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['aws_keys']==true -%>
+<% if node[:wordpress][:aws_keys]==true %>
 define('AWS_ACCESS_KEY_ID', '<%= @aws_access_key %>');
 define('AWS_SECRET_ACCESS_KEY', '<%= @aws_secrets_key %>');
-<% end -%>
+<% end %>
 
-<% if node['wordpress']['ms_lockdown']==true -%>
+<% if node[:wordpress][:ms_lockdown]==true %>
 define( 'MS_LOCKDOWN_LOGIN_DATA', '<%= @mslock_down_key %>' );
-<% end -%>
+<% end %>
 
 /**
  * Database Information
