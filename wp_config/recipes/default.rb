@@ -4,6 +4,15 @@
 # About:: Deploy wp_config.php
 #
 
+# Delete Current wp-config.php If Found
+file "#{node[:wordpress][:path]}/wp-config.php" do
+    action :delete
+    backup false
+    only_if do
+        File.exists?("#{node[:wordpress][:path]}/wp-config.php")
+    end
+end
+
 # Create wp-config.php File From Template
 template "#{node[:wordpress][:path]}/wp-config.php" do
     source "wp-config.php.erb"
@@ -11,7 +20,6 @@ template "#{node[:wordpress][:path]}/wp-config.php" do
     owner 'root'
     group 'root'
     variables(
-        :wp_cache           => node[:wordpress][:wp_cache],
         :db_name            => node[:wordpress][:name],
         :db_user            => node[:wordpress][:user],
         :db_pass            => node[:wordpress][:pass],

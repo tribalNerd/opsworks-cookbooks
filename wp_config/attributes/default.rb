@@ -5,6 +5,11 @@
 #
 
 #
+# Location To Create wp-config.php File
+#
+default[:wordpress][:path] = "/var/www/html"
+
+#
 # Database Settings
 #
 
@@ -19,39 +24,38 @@ default[:wordpress][:host] = "hivedbinstance.cvw1qm8j3pfh.us-east-1.rds.amazonaw
 # Mixed Constants
 #
 
-default[:wordpress][:mutlsite_domain] = "hive.madmadder.com"
-
 # WP Cache Constant
-default[:wordpress][:wp_cache] = "true"
+default[:wordpress][:wp_cache] = true
 
 # Repair WP Database Constant
-default[:wordpress][:wp_auto_repair] = "false"
+default[:wordpress][:wp_auto_repair] = false
 
 # Increase Memory Limit Constant
 default[:wordpress][:wp_memory_limit] = true
 
 # Default WP Cron Constant
-default[:wordpress][:disable_wp_cron] = "false"
+default[:wordpress][:disable_wp_cron] = false
 
 # File Editing Constant
-default[:wordpress][:disable_file_edit] = "true"
+default[:wordpress][:disable_file_edit] = true
 
 # Force Secure Logins Constants
-default[:wordpress][:force_ssl_login] = "false"
+default[:wordpress][:force_ssl_login] = false
 
 # Setup Mutlisite Network Constant
-default[:wordpress][:setup_multisite] = "false"
+default[:wordpress][:setup_multisite] = false
 
-# Mutlisite Network Enabled Constants
-default[:wordpress][:network_enabled] = "true"
+# Mutlisite Network Constants
+default[:wordpress][:network_enabled] = true
+default[:wordpress][:mutlsite_domain] = "hive.madmadder.com"
 
 # AWS Access & Secret Key Constants
-default[:wordpress][:aws_keys] = "true"
+default[:wordpress][:aws_keys] = true
 default[:wordpress][:aws_access_key] = "AKIAILL4TGE42YGQ6BHQ"
 default[:wordpress][:aws_secrets_key] = "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"
 
 # Multisite Lockdown Protection
-default[:wordpress][:ms_lockdown] = "true"
+default[:wordpress][:ms_lockdown] = true
 default[:wordpress][:mslock_down_key] = "8aNnbxZH7ltLA"
 
 

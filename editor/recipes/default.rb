@@ -8,7 +8,7 @@
 bash 'set_editor' do
     code <<-EOH
 (cd /usr/bin)
-(sudo ln -s nano node['editor']['name'])
-(export EDITOR="#{node['editor']['name']}")
+(sudo ln -s nano {node[:editor][:name]})
+(export EDITOR="#{node['editor'][:name]}")
 EOH
 end

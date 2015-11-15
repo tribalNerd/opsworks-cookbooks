@@ -3,7 +3,7 @@
  * @package OpsWorks Cookbook: wp_config::default
  */
 
-<% if @wp_cache == true %>
+<% if node[:wordpress][:wp_cache]==true %>
 define('WP_CACHE', true);
 <% end %>
 
@@ -33,21 +33,30 @@ define('WP_ALLOW_MULTISITE', true);
 <% end %>
 
 <% if node[:wordpress][:network_enabled]==true %>
+/**
+ * Multisite Network
+ */
 define('SUNRISE', 'on');
 define('MULTISITE', true);
 define('SUBDOMAIN_INSTALL', false);
-define('DOMAIN_CURRENT_SITE', '<%= @mutlsite_domain %>');
+define('DOMAIN_CURRENT_SITE', '<%= node[:wordpress][:mutlsite_domain] %>');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
 <% end %>
 
 <% if node[:wordpress][:aws_keys]==true %>
+/**
+ * AWS S3 Plugin
+ */
 define('AWS_ACCESS_KEY_ID', '<%= @aws_access_key %>');
 define('AWS_SECRET_ACCESS_KEY', '<%= @aws_secrets_key %>');
 <% end %>
 
 <% if node[:wordpress][:ms_lockdown]==true %>
+/**
+ * Custom Plugin
+ */
 define( 'MS_LOCKDOWN_LOGIN_DATA', '<%= @mslock_down_key %>' );
 <% end %>
 

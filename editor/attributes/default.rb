@@ -5,6 +5,6 @@
 #
 
 #
-# Editor To Use
+# Editor Name To Use
 #
-default['editor']['name'] = "pico"
+default[:editor][:name] = "pico"
