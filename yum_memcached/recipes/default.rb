@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: memcached
-# Recipe:: default
+# Cookbook Name:: yum_memcached
+# Recipe:: yum_memcached::default
 # About:: Install & Start Memcached
 #
 
@@ -19,12 +19,12 @@ end
 bash "memcached_level" do
     user "root"
     code <<-EOH
-        sudo chkconfig --level 345 memcached on
-    EOH
+(sudo chkconfig --level 345 memcached on)
+EOH
 end
 
 # Install Libmemcached Library
 execute "install php55-pecl-memcache" do
-    command "yum install php55-pecl-memcache -y"
+    command "yum install php55-pecl-memcached -y"
     action :run
 end
