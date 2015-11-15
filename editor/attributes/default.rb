@@ -7,4 +7,4 @@
 #
 # Editor To Use
 #
-default['editor']['type'] = "pico"
+default['editor']['name'] = "pico"
