@@ -9,7 +9,7 @@ template "#{node[:wordpress][:path]}/wp-config.php" do
     source "wp-config.php.erb"
     mode 0640
     owner 'root'
-    group httpuser
+    group 'root'
     variables(
         :db_name            => node[:wordpress][:name],
         :db_user            => node[:wordpress][:user],
