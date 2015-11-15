@@ -1,33 +1,28 @@
 <?php
 /**
- * @package OpsWorks Cookbook: wp_config::default
+ * @package Wordpress
+ * @creator OpsWorks Cookbook: wp_config::default
  */
 
 <% if node[:wordpress][:wp_cache]==true %>
 define('WP_CACHE', true);
 <% end %>
-
 <% if node[:wordpress][:wp_auto_repair]==true %>
 define('WP_ALLOW_REPAIR', true);
 <% end %>
-
 <% if node[:wordpress][:wp_memory_limit]==true %>
 define('WP_MEMORY_LIMIT', '256M');
 <% end %>
-
 <% if node[:wordpress][:disable_wp_cron]==true %>
 define('DISABLE_WP_CRON', true);
 <% end %>
-
 <% if node[:wordpress][:disable_file_edit]==true %>
 define('DISALLOW_FILE_EDIT', true);
 <% end %>
-
 <% if node[:wordpress][:force_ssl_login]==true %>
 define('FORCE_SSL_LOGIN', true);
 define('FORCE_SSL_ADMIN', true);
 <% end %>
-
 <% if node[:wordpress][:setup_multisite]==true %>
 define('WP_ALLOW_MULTISITE', true);
 <% end %>
@@ -96,15 +91,15 @@ define('NONCE_SALT',       '<%= @nonce_salt %>');
 /**
  * Localized Wordpress
  */
-define ('WPLANG', '<%= @language %>');
+define('WPLANG', '<%= @language %>');
 
 /**
  * Wordpress
  */
 
-if ( !defined('ABSPATH') )
+if(!defined('ABSPATH'))
     define('ABSPATH', dirname(__FILE__) . '/');
 
-if( file_exists(ABSPATH . 'wp-config-custom.php') )
+if(file_exists(ABSPATH . 'wp-config-custom.php'))
     require_once(ABSPATH . 'wp-config-custom.php');
     require_once(ABSPATH . 'wp-settings.php');

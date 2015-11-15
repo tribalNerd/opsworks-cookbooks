@@ -1,24 +1,24 @@
-# AWS OpsWorks Cookbooks
+# AWS OpsWorks Cookbooks :: Set Editor To Pico
 
-Change Default System Editor
+Why pico instead of nano? Because that's what my fingers type...
 
 ----
 
 ## Stack Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: editor:default
+Custom Chef Recipes > Configure: editor::default
 
 ## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: editor:default
+Recipes to execute: editor::default
 
 ----
 ----
 
-## MIT License (MIT)
+### MIT License (MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

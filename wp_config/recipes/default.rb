@@ -4,6 +4,14 @@
 # About:: Deploy wp_config.php
 #
 
+# Create Maintenance File If Not Found
+template "#{node[:wordpress][:path]}/maintenance.html" do
+    source "maintenance.erb"
+    only_if do
+        File.exists?("#{node[:wordpress][:path]}/maintenance.html")
+    end
+end
+
 # Delete Current wp-config.php If Found
 file "#{node[:wordpress][:path]}/wp-config.php" do
     action :delete
@@ -49,4 +57,13 @@ template "#{node[:wordpress][:path]}/wp-config.php" do
         :mslock_down_key    => node[:wordpress][:mslock_down_key],
         :mutlsite_domain    => node[:wordpress][:mutlsite_domain]
     )
+end
+
+# Delete maintenance.html If Found
+file "#{node[:wordpress][:path]}/maintenance.html" do
+    action :delete
+    backup false
+    only_if do
+        File.exists?("#{node[:wordpress][:path]}/maintenance.html")
+    end
 end
