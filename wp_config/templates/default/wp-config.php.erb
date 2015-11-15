@@ -4,8 +4,6 @@
  * @creator OpsWorks Cookbook: wp_config::default
  */
 
-define('TESTING', '<%= node[:wp_config][:test] %>');
-
 <% if node[:wp_config][:wp_cache]==true %>
 define('WP_CACHE', true);
 <% end %>

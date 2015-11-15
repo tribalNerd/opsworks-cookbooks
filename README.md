@@ -2,7 +2,6 @@
 
 ----
 
-* [Apache Mods Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/apache)
 * [Set Editor Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/editor)
 * [VirutalHost Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/virutalhost)
 * [Memcached Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/yum-memcached)
