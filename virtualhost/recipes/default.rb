@@ -6,7 +6,7 @@
 
 # Loop Through Settings: attributes/default.rb
 node["vhost"]["domains"].each do |application, data|
-    # Remove Config From Available Sites
+    # Remove Config If Found
     file "#{node["vhost"][:conf]}/#{application}.conf" do
         action :delete
         only_if do
@@ -16,7 +16,6 @@ node["vhost"]["domains"].each do |application, data|
 
     # Create VirtualHost From: templates/default
     template "#{node["vhost"][:conf]}/#{application}.conf" do
-        Chef::Log.debug("Generated Apache Configuration For: #{application}")
         source "#{node[:vhost][:tmpl]}"
         owner 'root'
         group 'root'
