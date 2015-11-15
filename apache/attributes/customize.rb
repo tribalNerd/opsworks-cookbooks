@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: apache2
-# Attributes:: apache
+# Attributes:: customize
 #
 
 default[:apache][:contact] = 'hostmaster@technerdia.com'
