@@ -11,6 +11,7 @@ template "#{node[:wordpress][:path]}/wp-config.php" do
     owner 'root'
     group 'root'
     variables(
+        :wp_cache           => node[:wordpress][:wp_cache],
         :db_name            => node[:wordpress][:name],
         :db_user            => node[:wordpress][:user],
         :db_pass            => node[:wordpress][:pass],

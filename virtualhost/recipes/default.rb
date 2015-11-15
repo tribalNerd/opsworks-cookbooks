@@ -16,7 +16,7 @@ node["vhost"]["domains"].each do |application, data|
 
     # Create VirtualHost From: templates/default
     template "#{node["vhost"][:conf]}/#{application}.conf" do
-        source "#{node[:vhost][:tmpl]}"
+        source "application.conf.erb"
         owner 'root'
         group 'root'
         mode 0644

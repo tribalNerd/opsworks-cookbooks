@@ -3,7 +3,7 @@
  * @package OpsWorks Cookbook: wp_config::default
  */
 
-<% if node[:wordpress][:wp_cache]==true %>
+<% if @wp_cache == true %>
 define('WP_CACHE', true);
 <% end %>
 
