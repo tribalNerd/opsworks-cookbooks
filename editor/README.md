@@ -1,11 +1,21 @@
-# AWS OpsWorks Cookbook for Default Editor
+# AWS OpsWorks Cookbooks
 
-Sets Default System Editor
+Change Default System Editor
 
 ----
 
-## Using
+## Stack Use
 
+Ops Work Admin > Layers > Recipes > Edit
+Custom Chef Recipes > Configure: editor:default
+
+## Manual Use
+
+Ops Work Admin > Stack > Run Command
+Settings > Command > Execute Recipes
+Recipes to execute: editor:default
+
+----
 ----
 
 ## MIT License (MIT)

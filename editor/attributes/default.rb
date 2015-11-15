@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: editor
-# Recipe:: deploy
+# Recipe:: editor::default
 # About:: Set Default Editor Settings
 #
 
