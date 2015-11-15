@@ -1,17 +1,18 @@
 # AWS OpsWorks Cookbooks
 
-Setup Apache2, Modify Default Editor, Install Memcached & Wordpress
-
 ----
 
-[VirutalHost Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/virutalhost)
-[Set Editor Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/editor)
-[Memcached Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/yum-memcached)
-[Wordpress Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/wordpress)
+* [Apache Mods Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/apache)
+* [Set Editor Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/editor)
+* [VirutalHost Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/virutalhost)
+* [Memcached Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/yum-memcached)
+* [Wordpress Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/wordpress)
+* [WP Config Cookbook](https://github.com/tribalNerd/aws-opsworks-cookbooks/tree/master/wp_config)
 
 ----
+----
 
-## MIT License (MIT)
+### MIT License (MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
