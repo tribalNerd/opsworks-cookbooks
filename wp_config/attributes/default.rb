@@ -28,7 +28,7 @@ default[:wordpress][:wp_cache] = "true"
 default[:wordpress][:wp_auto_repair] = "false"
 
 # Increase Memory Limit Constant
-default[:wordpress][:wp_memory_limit] = "true"
+default[:wordpress][:wp_memory_limit] = true
 
 # Default WP Cron Constant
 default[:wordpress][:disable_wp_cron] = "false"
