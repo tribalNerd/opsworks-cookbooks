@@ -1,20 +1,19 @@
-# AWS OpsWorks Cookbook :: Installing Wordpress
+# AWS OpsWorks Cookbook :: Apache2 Mod Rewrite
 
-Downloads & extracts Wordpress sets up the wp-config.php file.
-Removes wp-config-sample.php, readme.html and license.txt.
+Enables Mod Rewrite For Apache2
 
 ----
 
 ## Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Deploy: wordpress::default
+Custom Chef Recipes > Configure: rewrite::default
 
 ## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: wordpress::default
+Recipes to execute: rewrite::default
 
 ----
 

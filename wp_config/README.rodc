@@ -1,19 +1,19 @@
-- AWS OpsWorks Cookbook :: Apache2 Virtualhost
+- AWS OpsWorks Cookbook :: Wordpress Configuration
 
-Create & Setup Apache2 Virtualhosts
+Deploy & Setup wp_config.php
 
 ----
 
 -- Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: virtualhost::default
+Custom Chef Recipes > Deploy: wp_config::default
 
 -- Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: virtualhost::default
+Recipes to execute: wp_config::default
 
 ----
 

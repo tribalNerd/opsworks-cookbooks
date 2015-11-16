@@ -1,27 +1,27 @@
-# AWS OpsWorks Cookbook : Apache2 Virtualhost
+# AWS OpsWorks Cookbook :: Apache2 Virtualhost
 
-Setup Apache2 Virtualhost
-
-----
+Create & Setup Apache2 Virtualhosts
 
 ----
 
-## MIT License (MIT)
+## Stack-Layers Use
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Ops Work Admin > Layers > Recipes > Edit
+Custom Chef Recipes > Configure: virtualhost::default
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Manual Use
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Ops Work Admin > Stack > Run Command
+Settings > Command > Execute Recipes
+Recipes to execute: virtualhost::default
+
+----
+
+* [OpsWorks Cookbooks Home](https://github.com/tribalNerd/aws-opsworks-cookbooks/)
+
+----
+----
+
+### Apache 2.0 License
+
+Unless otherwise stated, cookbooks/recipes are licensed under the [Apache 2.0 license](http://aws.amazon.com/apache-2-0/).

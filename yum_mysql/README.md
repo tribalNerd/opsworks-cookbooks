@@ -1,20 +1,19 @@
-# AWS OpsWorks Cookbook :: Installing Wordpress
+# AWS OpsWorks Cookbook :: PHP-MYSQL/PDO
 
-Downloads & extracts Wordpress sets up the wp-config.php file.
-Removes wp-config-sample.php, readme.html and license.txt.
+Enables The Required Apache Mod PHP-MYSQL & PHP-PDO For Wordpress Installs.
 
 ----
 
 ## Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Deploy: wordpress::default
+Custom Chef Recipes > Configure: yum_mysql::default
 
 ## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: wordpress::default
+Recipes to execute: yum_mysql::default
 
 ----
 

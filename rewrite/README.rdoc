@@ -1,19 +1,19 @@
-- AWS OpsWorks Cookbook :: Apache2 Virtualhost
+- AWS OpsWorks Cookbook :: Apache2 Mod Rewrite
 
-Create & Setup Apache2 Virtualhosts
+Enables Mod Rewrite For Apache2
 
 ----
 
 -- Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: virtualhost::default
+Custom Chef Recipes > Configure: rewrite::default
 
 -- Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: virtualhost::default
+Recipes to execute: rewrite::default
 
 ----
 

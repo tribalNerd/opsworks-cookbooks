@@ -1,7 +1,7 @@
 #
 # Cookbook Name:: wp_config
 # Recipe:: wp_config::default
-# About:: Deploy wp_config.php
+# About:: Deploy & Setup wp_config.php
 #
 
 # Create Maintenance File If Not Found
