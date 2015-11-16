@@ -5,4 +5,4 @@ maintainer       "tribalNerd"
 license          "Apache 2.0"
 version          "1.0.0"
 
-recipe "swapfile::default", "Create Google Verify Files"
+recipe "swapfile::default", "Create Memory Swapfile For Ec2 Instances"

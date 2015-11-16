@@ -5,4 +5,4 @@ maintainer       "tribalNerd"
 license          "Apache 2.0"
 version          "1.0.0"
 
-recipe "yum_mysql::default", "Deploy & Setup wp_config.php"
+recipe "wp_config::default", "Deploy & Setup wp_config.php"
