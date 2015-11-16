@@ -23,8 +23,8 @@ node[:virutalhosts].each do |domain, data|
         variables(
             :port   => data["port"],
             :domain => domain,
-            :admin  => data["email"],
-            :root   => data["path"]
+            :email  => data["email"],
+            :path   => data["path"]
         )
     end
 end
