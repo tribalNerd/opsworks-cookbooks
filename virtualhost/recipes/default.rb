@@ -5,17 +5,17 @@
 #
 
 # Loop Through Settings: attributes/default.rb
-node["vhost"]["domains"].each do |application, data|
+node[:vhost][:domains].each do |application, data|
     # Remove Config If Found
-    file "#{node["vhost"][:conf]}/#{application}.conf" do
+    file "#{node[:vhost][:conf]}/#{application}.conf" do
         action :delete
         only_if do
-            ::File.exists?("#{node["vhost"][:conf]}/#{application}.conf")
+            ::File.exists?("#{node[:vhost][:conf]}/#{application}.conf")
         end
     end
 
     # Create VirtualHost From: templates/default
-    template "#{node["vhost"][:conf]}/#{application}.conf" do
+    template "#{node[:vhost][:conf]}/#{application}.conf" do
         source "application.conf.erb"
         owner 'root'
         group 'root'
@@ -23,8 +23,8 @@ node["vhost"]["domains"].each do |application, data|
         variables(
             :vhostport   => data["vhostport"],
             :vhostdomain => data["vhostname"],
-            :vhostroot   => data["vhostroot"],
             :vhostadmin  => data["vhostadmin"]
+            :vhostroot   => data["vhostroot"]
         )
     end
 end
