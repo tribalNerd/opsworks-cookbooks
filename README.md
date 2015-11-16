@@ -1,19 +1,5 @@
-# AWS OpsWorks Cookbook :: Installs PHP-MYSQL, Required By Wordpress
+# AWS OpsWorks Cookbooks
 
-For Amazon AMI Instances, Installs PHP-MYSQL & PHP-PDO.
-
-----
-
-## Stack Use
-
-Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: yum_mysql::default
-
-## Manual Use
-
-Ops Work Admin > Stack > Run Command
-Settings > Command > Execute Recipes
-Recipes to execute: yum_mysql::default
 
 ----
 

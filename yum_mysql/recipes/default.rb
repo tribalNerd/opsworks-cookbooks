@@ -4,4 +4,8 @@
 # About:: Required For Wordpress
 #
 
-yum_package 'php-mysql php-pdo'
+# Install
+execute "install php-mysql php-pdo" do
+    command "yum install php-mysql php-pdo -y"
+    action :run
+end
