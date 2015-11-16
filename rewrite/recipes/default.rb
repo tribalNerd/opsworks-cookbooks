@@ -7,5 +7,9 @@
 # Enable Mod Rewrite
 execute "a2dismod rewrite" do
     command "/usr/sbin/a2dismod rewrite"
-    notifies :restart, "service[apache2]"
+end
+
+# Restart Apache
+service "httpd" do
+    action :restart
 end
