@@ -36,12 +36,10 @@ directory "/var/www/html" do
 end
 
 # Symlink Default HTML To Application Source
-execute "symlinking subdir mount if necessary" do
+execute "symlinking source directory if necessary" do
     command "ln -s #{node[:app_root]} /var/www/html}"
     action :run
-    only_if do
-        deploy[:mounted_at] && File.exists?("/var/www")
-    end
+    not_if { File.symlink?("/var/www/html") }
 end
 
 # Restart Apache
