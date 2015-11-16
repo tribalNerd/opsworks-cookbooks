@@ -29,6 +29,21 @@ node[:virutalhost].each do |domain, data|
     end
 end
 
+# Remove Default HTML Directory
+directory "/var/www/html" do
+  action :delete
+  not_if { File.symlink?("/var/www/html") }
+end
+
+# Symlink Default HTML To Application Source
+execute "symlinking subdir mount if necessary" do
+    command "ln -s #{node[:app_root]} /var/www/html}"
+    action :run
+    only_if do
+        deploy[:mounted_at] && File.exists?("/var/www")
+    end
+end
+
 # Restart Apache
 service "httpd" do
     action :restart
