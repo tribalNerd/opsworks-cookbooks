@@ -4,8 +4,8 @@
 ## Layer PHP App Server
 ### Custom Chef Recipes
 
-Configure: ``` virtualhost::default ``` ``` editor::default ```
-Deploy: ``` wp_config::default ``` ``` verify_site::default ```
+Configure: ``` virtualhost::default ``` ``` pico::default ``` ``` swapfile::default ```
+Deploy: ``` wp_config::default ``` ``` verify_site::default ``` ``` wp_owner::default ```
 
 ## Stack JSON Node Data
 
