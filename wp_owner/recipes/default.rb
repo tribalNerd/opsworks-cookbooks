@@ -13,6 +13,9 @@ bash 'set permissions' do
         # Set File Permissions
         sudo find #{node[:app_root]}/ -type f -exec chmod 644 {} \;
 
+        # Correct All Wordpress Files
+        sudo chown -R #{node[:wp_config][:owner]}:#{node[:wp_config][:owner]} #{node[:app_root]}/
+
         # Allow Apache To Write To Cache Directory
         sudo chown -R #{node[:wp_config][:owner]}:#{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/cache
 
