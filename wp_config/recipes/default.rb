@@ -19,12 +19,19 @@ file "#{node[:wp_config][:path]}/wp-config.php" do
     end
 end
 
+# Apache File Ownership Variable
+if platform?("ubuntu")
+    httpuser = "www-data"
+elsif platform?("amazon")
+    httpuser = "apache"
+end
+
 # Create wp-config.php File From Template
 template "#{node[:wp_config][:path]}/wp-config.php" do
     source "wp-config.php.erb"
     mode 0640
     owner 'root'
-    group 'root'
+    group httpuser
 end
 
 # Delete Garbage wp-config-sample.php If Found
