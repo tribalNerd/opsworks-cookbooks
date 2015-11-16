@@ -13,13 +13,15 @@
 * Create a stacks.json on your local dev to store the settings in.
 * Add stacks.json to your .gitignore file
 
-```json {
+```json
+{
     "apache" : {
       "timeout" : 40,
       "keepaliverequests" : 200,
       "keepalivetimeout" : 2
     }
-} ```
+}
+```
 
 
 ## Layers JSON Node Data
@@ -27,7 +29,8 @@
 * Create a layers.json file on your local dev and populate the fields.
 * Add layers.json to your .gitignore file
 
-```json {
+```json
+{
     "app_root" : "/srv/www/html/current",
     "httpd_home" : "/etc/httpd/conf.d",
     "deploy": {
@@ -93,7 +96,8 @@
         "logged_in_salt" : "",
         "nonce_salt" : "",
     }
-} ```
+}
+```
 
 ----
 
