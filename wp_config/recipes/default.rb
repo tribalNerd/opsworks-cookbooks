@@ -23,8 +23,8 @@ end
 template "#{node[:app_root]}/wp-config.php" do
     source "wp-config.php.erb"
     mode 0640
-    owner 'root'
-    group #{node[:wp_config][:owner]}
+    owner 'deploy'
+    group 'apache'
 end
 
 # Delete Garbage wp-config-sample.php If Found
