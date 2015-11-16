@@ -1,6 +1,12 @@
 # AWS OpsWorks Cookbooks
 
 
+## List JSON Node Data
+
+SSH into an OpsWorks EC2 Instance, then run the command below for a readout of all current loaded JSON settings.
+
+``` sudo opsworks-agent-cli get_json ```
+
 ----
 
 * [OpsWorks Cookbooks Home](https://github.com/tribalNerd/aws-opsworks-cookbooks/)
