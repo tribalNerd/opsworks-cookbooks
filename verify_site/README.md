@@ -1,25 +1,27 @@
 # AWS OpsWorks Cookbook :: Create Google Verify Files
 
-Create Google Verify Files: google#############.html
+Creates Google Verify Files: google#############.html
 
 ----
 
 ## Custom JSON
 
+Replace google############# with your google site verify filenames, excluding the .html extension.
+
 ```{
-  "google_verify" : [ "google2380b6297fa6bdc8", "google195979255185acb6"]
+  "verify_site" : [ "google2380b6297fa6bdc8", "google195979255185acb6"]
 }```
 
 ## Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: google_verify::default
+Custom Chef Recipes > Configure: verify_site::default
 
 ## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: google_verify::default
+Recipes to execute: verify_site::default
 
 ----
 

@@ -1,11 +1,11 @@
 #
-# Cookbook Name:: google_verify
-# Recipe:: google_verify::default
+# Cookbook Name:: verify_site
+# Recipe:: verify_site::default
 # About:: Create Google Verify Files
 #
 
 # Create Verify Files
-node["google_verify"].each do |filename|
+node["verify_site"].each do |filename|
     execute "google" do
         command "echo 'google-site-verification: #{filename}.html' > #{node["app_root"]}/#{filename}.html"
         action :run

@@ -36,7 +36,7 @@ directory "/var/www/html" do
 end
 
 # Symlink Default HTML To Application Source
-execute "symlinking source directory if necessary" do
+execute "symlinking app source directory if necessary" do
     command "ln -s #{node[:app_root]} /var/www/html}"
     action :run
     not_if { File.symlink?("/var/www/html") }
