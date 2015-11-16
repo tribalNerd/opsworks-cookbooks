@@ -22,6 +22,9 @@ bash 'set permissions' do
         # Allow Apache To Write To Uploads Directory
         chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/uploads
 
+        # Allow Apache To Write To w3tc-config Directory
+        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/w3tc-config
+
         # Stop Wordpress From Updating Themes
         chown -R root #{node[:app_root]}/wp-content/themes
         chown -R root #{node[:app_root]}/wp-content/plugins
