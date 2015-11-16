@@ -5,7 +5,7 @@
 #
 
 # Create Verify Files
-node["google"].each do |filename|
+node["google_verify"].each do |filename|
     execute "google" do
         command "echo '#{filename}' > /var/www/html/#{filename}.html"
         action :run

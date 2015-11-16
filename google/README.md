@@ -7,10 +7,7 @@ Create Google Verify Files: google#############.html
 ## Custom JSON
 
 ```{
-  "google" : {
-    "file" : "google0000000000000000",
-    "file" : "google0000000000000000"
-  }
+  "google_verify" : [ "google2380b6297fa6bdc8", "google195979255185acb6"]
 }```
 
 ## Stack-Layers Use
