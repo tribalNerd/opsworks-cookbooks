@@ -16,8 +16,11 @@ bash 'set permissions' do
         # Stop Wordpress From Updating Itself
         chown -R root.root #{node[:app_root]}/
 
-        # Allow Apache To Write To Content Directory
-        chown -R #{node[:wordpress][:owner]} #{node[:app_root]}/wp-content/
+        # Allow Apache To Write To Cache Directory
+        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/cache
+
+        # Allow Apache To Write To Uploads Directory
+        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/uploads
 
         # Stop Wordpress From Updating Themes
         chown -R root #{node[:app_root]}/wp-content/themes
