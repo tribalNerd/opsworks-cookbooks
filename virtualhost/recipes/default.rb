@@ -5,7 +5,7 @@
 #
 
 # Loop Through Settings: attributes/default.rb
-node[:virutalhosts].each do |domain, data|
+node[:virutalhost].each do |domain, data|
     # Remove Config If Found
     file "#{node[:httpd_home]}/#{domain}.conf" do
         action :delete

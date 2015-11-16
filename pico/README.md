@@ -1,27 +1,27 @@
-- AWS OpsWorks Cookbooks :: Set Editor To Pico
+# AWS OpsWorks Cookbooks :: Set Editor To Pico
 
 Why pico instead of nano? Because that's what my fingers type...
 
 ----
 
--- Stack Use
+## Stack Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: editor::default
+Custom Chef Recipes > Configure: pico::default
 
--- Manual Use
+## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: editor::default
+Recipes to execute: pico::default
 
 ----
 
-* https://github.com/tribalNerd/aws-opsworks-cookbooks/
+* [OpsWorks Cookbooks Home](https://github.com/tribalNerd/aws-opsworks-cookbooks/)
 
 ----
 ----
 
---- Apache 2.0 License
+### Apache 2.0 License
 
 Unless otherwise stated, cookbooks/recipes are licensed under the [Apache 2.0 license](http://aws.amazon.com/apache-2-0/).

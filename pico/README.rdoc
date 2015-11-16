@@ -1,19 +1,19 @@
-- AWS OpsWorks Cookbook :: PHP-MYSQL/PDO
+- AWS OpsWorks Cookbooks :: Set Editor To Pico
 
-Enables The Required Apache Mod PHP-MYSQL & PHP-PDO For Wordpress Installs.
+Why pico instead of nano? Because that's what my fingers type...
 
 ----
 
--- Stack-Layers Use
+-- Stack Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Configure: yum_mysql::default
+Custom Chef Recipes > Configure: pico::default
 
 -- Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: yum_mysql::default
+Recipes to execute: pico::default
 
 ----
 

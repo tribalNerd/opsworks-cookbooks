@@ -1,6 +1,6 @@
 #
-# Cookbook Name:: editor
-# Recipe:: editor::default
+# Cookbook Name:: pico
+# Recipe:: pico::default
 # About:: Set Pico As Default Editor
 #
 
