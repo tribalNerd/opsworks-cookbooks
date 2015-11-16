@@ -73,7 +73,7 @@
         "db_collate" : "",
         "wp_cache" : true,
         "wp_auto_repair" : false,
-        "wp_memory_limit" : true,
+        "wp_memory_limit" : false,
         "set_memory_limit" : "256M",
         "disable_wp_cron" : false,
         "disable_file_edit" : true,
