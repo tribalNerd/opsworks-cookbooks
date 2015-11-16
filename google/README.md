@@ -1,7 +1,6 @@
-# AWS OpsWorks Cookbook :: Installing Wordpress
+# AWS OpsWorks Cookbook :: Create Google Verify Files
 
-Downloads & extracts Wordpress sets up the wp-config.php file.
-Removes wp-config-sample.php, readme.html and license.txt.
+Create Google Verify Files: google#############.html
 
 ----
 
@@ -9,22 +8,21 @@ Removes wp-config-sample.php, readme.html and license.txt.
 
 ```{
   "google" : {
-    "owner" : "apache",
-    "path" : "/var/www/html",
-    "latest" : "http://wordpress.org/latest.tar.gz"
+    "file" : "google0000000000000000",
+    "file" : "google0000000000000000"
   }
 }```
 
 ## Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
-Custom Chef Recipes > Deploy: wordpress::default
+Custom Chef Recipes > Configure: google::default
 
 ## Manual Use
 
 Ops Work Admin > Stack > Run Command
 Settings > Command > Execute Recipes
-Recipes to execute: wordpress::default
+Recipes to execute: google::default
 
 ----
 

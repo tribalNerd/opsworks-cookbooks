@@ -5,6 +5,16 @@ Removes wp-config-sample.php, readme.html and license.txt.
 
 ----
 
+-- Custom JSON
+
+```{
+  "google" : {
+    "owner" : "apache",
+    "path" : "/var/www/html",
+    "latest" : "http://wordpress.org/latest.tar.gz"
+  }
+}```
+
 -- Stack-Layers Use
 
 Ops Work Admin > Layers > Recipes > Edit
