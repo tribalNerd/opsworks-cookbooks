@@ -1,17 +1,21 @@
 # AWS OpsWorks Cookbooks for Wordpress Installs
 
+Custom OpsWorks Cookbooks for Multisite Network Wordpress Installs. The "Apps" loaded onto the PHP App Server is Wordress, with plugins and themes
 
-## Layer PHP App Server
-### Custom Chef Recipes
+The "App" for the OpsWorks setup is Wordpress, stored in a Private Repo. The Repo contains all Wordpress working files, themes and plugins for the project. A .gitignore file excludes the wp-config.php file, /wp-content/cache/config and /wp-content/uploads/sites.
 
-*Configure:* ``` virtualhost::default ``` ``` pico::default ``` ``` swapfile::default ```
+## Stack
 
-*Deploy:* ``` wp_config::default ``` ``` verify_site::default ``` ``` wp_owner::default ```
+The Stack that holds the PHP App Server must be configured to work with a Repository that contains only cookbooks.
 
-## Stack JSON Node Data
+Stack > Stack Settings > Edit : Configuration Management
+
+## Stack: JSON Node Data
 
 * Create a stacks.json on your local dev to store the settings in.
 * Add stacks.json to your .gitignore file
+
+Stack > Stack Settings > Edit : Custom JSON
 
 ```json
 {
@@ -24,10 +28,22 @@
 ```
 
 
+## Layer: PHP App Server
+### Custom Chef Recipes
+
+Layers > PHP APP Server : Recipes > Edit
+
+*Configure:* ``` virtualhost::default ``` ``` pico::default ``` ``` swapfile::default ```
+
+*Deploy:* ``` wp_config::default ``` ``` verify_site::default ``` ``` wp_owner::default ```
+
+
 ## Layers JSON Node Data
 
 * Create a layers.json file on your local dev and populate the fields.
 * Add layers.json to your .gitignore file
+
+Layers > PHP APP Server : Settings > Edit : Custom JSON
 
 ```json
 {

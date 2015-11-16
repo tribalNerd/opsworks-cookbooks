@@ -8,25 +8,18 @@
 bash 'set permissions' do
     code <<-EOH
         # Set Directory Permissions
-        find #{node[:app_root]}/ -type d -exec chmod 755 {} \;
+        sudo find #{node[:app_root]}/ -type d -exec chmod 755 {} \;
 
         # Set File Permissions
-        find #{node[:app_root]}/ -type f -exec chmod 644 {} \;
-
-        # Stop Wordpress From Updating Itself
-        chown -R root.root #{node[:app_root]}/
+        sudo find #{node[:app_root]}/ -type f -exec chmod 644 {} \;
 
         # Allow Apache To Write To Cache Directory
-        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/cache
+        sudo chown -R #{node[:wp_config][:owner]}:#{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/cache
 
         # Allow Apache To Write To Uploads Directory
-        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/uploads
+        sudo chown -R #{node[:wp_config][:owner]}:#{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/uploads
 
         # Allow Apache To Write To w3tc-config Directory
-        chown -R #{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/w3tc-config
-
-        # Stop Wordpress From Updating Themes
-        chown -R root #{node[:app_root]}/wp-content/themes
-        chown -R root #{node[:app_root]}/wp-content/plugins
+        sudo chown -R #{node[:wp_config][:owner]}:#{node[:wp_config][:owner]} #{node[:app_root]}/wp-content/w3tc-config
     EOH
 end
