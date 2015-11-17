@@ -1,7 +1,7 @@
 <VirtualHost *:<%= @port %>>
     ServerName <%= @domain %>
     ServerAdmin <%= @email %>
-    DocumentRoot <%= @path %>
+    DocumentRoot "<%= @path %>"
     <Directory <%= @path %>>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
