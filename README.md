@@ -10,24 +10,6 @@ The Stack that holds the PHP App Server must be configured to work with a Reposi
 
 Stack > Stack Settings > Edit : Configuration Management
 
-## Stack: JSON Node Data
-
-* Create a stacks.json on your local dev to store the settings in.
-* Add stacks.json to your .gitignore file
-
-Stack > Stack Settings > Edit : Custom JSON
-
-```json
-{
-    "apache" : {
-      "timeout" : 40,
-      "keepaliverequests" : 200,
-      "keepalivetimeout" : 2
-    }
-}
-```
-
-
 ## Layer: PHP App Server
 ### Custom Chef Recipes
 
@@ -47,6 +29,13 @@ Layers > PHP APP Server : Settings > Edit : Custom JSON
 
 ```json
 {
+    "apache" : {
+        "prefork" : {
+            "startservers" : 32,
+            "minspareservers" : 32,
+            "maxspareservers" : 64
+        }
+    },
     "app_root" : "/srv/www/html/current",
     "httpd_home" : "/etc/httpd/conf.d",
     "deploy": {
