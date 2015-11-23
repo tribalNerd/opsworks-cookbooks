@@ -18,7 +18,7 @@ end
 # Chmod Files - If Found
 node["verify_site"].each do |filename|
     execute "chmod" do
-        command "chmod 0755 #{filename}.html"
+        command "chmod 0755 #{node["app_root"]}/#{filename}.html"
         action :run
         only_if do
             ::File.exists?("#{node["app_root"]}/#{filename}.html")
