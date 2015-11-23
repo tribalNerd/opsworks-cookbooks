@@ -8,7 +8,6 @@
 node["verify_site"].each do |filename|
     execute "google" do
         command "echo 'google-site-verification: #{filename}.html' > #{node["app_root"]}/#{filename}.html"
-        mode 0755
         action :run
         only_if do
             !::File.exists?("#{node["app_root"]}/#{filename}.html")
