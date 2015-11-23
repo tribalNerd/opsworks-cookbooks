@@ -31,8 +31,8 @@ Layers > PHP APP Server : Settings > Edit : Custom JSON
 {
     "apache" : {
         "prefork" : {
-            "startservers" : 32,
-            "minspareservers" : 32,
+            "startservers" : 20,
+            "minspareservers" : 16,
             "maxspareservers" : 64
         }
     },
