@@ -1,12 +1,12 @@
 <VirtualHost *:<%= @port %>>
-    ServerName <%= @domain %>
-    ServerAdmin <%= @email %>
-    DocumentRoot "<%= @path %>"
-    <Directory <%= @path %>>
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride All
-        Order deny,allow
-        Allow from all
-    </Directory>
-    FileETag none
+ServerName <%= @domain %>
+ServerAlias www.<%= @domain %> *.<%= @domain %>
+ServerAdmin <%= @email %>
+DocumentRoot "<%= @path %>"
+<Directory <%= @path %>>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride All
+Order deny,allow
+Allow from all
+</Directory>
 </VirtualHost>
